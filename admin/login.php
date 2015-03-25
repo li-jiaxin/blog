@@ -2,11 +2,21 @@
     header("Content-type:text/html;charset=utf-8");//设置content类型和编码类型
     require_once '../config/inc.php';//请求上一级文件的内容
     
+    session_start();
+    
     //判断是否提交到login.php
     if(isset($_POST["act"])){
-        $username= filterUser($_POST["username"]);//从login.php中取值
-        $password=filterUser($_POST["password"]);
-        if ($_POST["act"] == "login" && $username && $password ){
+        
+        //销毁session
+        if($_POST["act"] == "logout"){
+            session_unset("username");
+            session_destroy();
+        }
+        
+        if ($_POST["act"] == "login" && filterUser($_POST["username"]) && filterUser($_POST["password"]) ){
+            
+            $username= filterUser($_POST["username"]);//从login.php中取值
+            $password=filterUser($_POST["password"]);
             
             //从数据库中选择密码判断用户名是否相同
             $result = $mysqli->query("select userPassword from userinfo where username='$username'");
@@ -15,11 +25,18 @@
             
             if ($row[0]==$password){
                 echo "密码正确";
+                $_SESSION["username"]=$username;
+                
             }else {
                 echo "密码错误";
             }
           
         }
+    }
+   
+    //从session中取到登陆信息
+    if(isset($_SESSION["username"])){
+        echo $_SESSION["username"]."已登录";
     }
     
     //函数作用判断参数是否为空以及有空格
@@ -77,6 +94,10 @@
         </div>
       </div>
        
+       <form action="login.php" method="post">
+            <input type="hidden" name="act" value="logout"/>
+            <input type="submit" class="btn btn-success" value="销毁" />
+       </form>
    
 
 </body>

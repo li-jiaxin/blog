@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>嘉欣</title>
+	<link rel="stylesheet" href="../static/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+		<div class="col-sm-8">
+		<div class="panel panel-default">
+			<div class="panel-heading">发表文章</div>
+			<div class="panel-body">
+				<form action="create.php" method="post">
+					<div class="form-group">
+						<label for="">标题</label>
+						<input type="text"class="form-control" id="title" name="title" placeholder="输入标题" />
+					</div>		
+					<div class="form-group">
+						<label for="">内容</label>
+						<textarea  class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
+					</div>	
+					<div class="form-group">
+						<label>标签</label>
+						<div class="checkbox">
+							<label><input type="checkbox" name="tag[]" value="web"/>web</label>
+							<label><input type="checkbox" name="tag[]" value="IOS"/>IOS</label>
+							<label><input type="checkbox" name="tag[]" value="Android"/>Android</label>
+						</div>
+					</div>
+					<div class="form-group">
+					<input type="submit" class="btn btn-success" />
+					</div>			
+				</form>		
+			</div>
+		</div>					
+		</div>
+		<div class="col-sm-4"></div>
+		</div>
+	</div>
+</body>
+</html>

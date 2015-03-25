@@ -1,9 +1,9 @@
 <?php
 header("Content-type:text/html;charset=utf-8");
-require_once 'config.php';//ÇëÇóÍ¬Ò»¼¶ÎÄ¼þÖÐµÄÄÚÈÝ
-//¶¨ÒåÒ»¸öº¯Êý£¬Á¬½ÓÊý¾Ý¿â
+require_once 'config.php';//è¯·æ±‚åŒä¸€çº§æ–‡ä»¶ä¸­çš„å†…å®¹
+//å®šä¹‰ä¸€ä¸ªå‡½æ•°ï¼Œè¿žæŽ¥æ•°æ®åº“
 $mysqli=new mysqli(HOST,username,password,dbname);
-//ÅÐ¶ÏÊý¾Ý¿âÊÇ·ñÁ¬½Ó
+//åˆ¤æ–­æ•°æ®åº“æ˜¯å¦è¿žæŽ¥
 if(mysqli_connect_errno()){
     printf("Connect failed:%S\n",mysqli_connect_error());
     exit();
