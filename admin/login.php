@@ -1,6 +1,6 @@
 <?php 
     header("Content-type:text/html;charset=utf-8");//设置content类型和编码类型
-    require_once '../config/inc.php';//请求上一级文件的内容
+    require_once '../config/inc.php';//请求上一级文件的内容,连接数据库
     
     session_start();
     
