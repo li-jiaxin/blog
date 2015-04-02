@@ -64,7 +64,7 @@
 	<link rel="stylesheet" href="../static/css/global.css" />
 </head>
 
-<body>
+<body class="login">
     <div class="container">
         <div class="row">
             <div class="col-sm-3"></div>
