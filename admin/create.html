@@ -4,6 +4,13 @@
 	<meta charset="UTF-8" />
 	<title>嘉欣</title>
 	<link rel="stylesheet" href="../static/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../static/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../static/markdown/css/bootstrap-markdown.min.css" />
+	<script src="../static/markdown/js/jquery.min.js"></script>
+	<script src="../static/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../static/markdown/js/bootstrap-markdown.js"></script>
+	<script src="../static/markdown/js/markdown.js"></script>
+	<script src="../static/markdown/js/to-markdown.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -12,14 +19,15 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">发表文章</div>
 			<div class="panel-body">
-				<form action="create.php" method="post">
+				<form>
 					<div class="form-group">
 						<label for="">标题</label>
 						<input type="text"class="form-control" id="title" name="title" placeholder="输入标题" />
+						
 					</div>		
 					<div class="form-group">
 						<label for="">内容</label>
-						<textarea  class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
+						<textarea name="content" data-provide="markdown" id="markdown-editor" rows="10"></textarea>
 					</div>	
 					<div class="form-group">
 						<label>原创</label>
@@ -31,7 +39,7 @@
 					<div class="form-group">
 						<label>来源</label>
 						<div>
-							<input type="text" class="form-control" name="source" />
+							<input type="text" class="form-control" name="source" id="source"/>
 						</div>	
 					</div>
 					<div class="form-group">
@@ -43,7 +51,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-					<input type="submit" class="btn btn-success" />
+					<button type="button" class="btn btn-success" id="submit">提交</button>
 					</div>			
 				</form>		
 			</div>
@@ -53,4 +61,17 @@
 		</div>
 	</div>
 </body>
+<script>
+	$('#submit').click(function(){
+		$('#title').val();
+		$('#content').val();
+		$('#source').val;
+		$("input[name='isMine']:checked").val();
+		$("input[name='tag[]']:checkbox:checked").each(function(){
+			$(this).val(); 
+		})
+	})
+</script>
+
+
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../static/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../static/markdown/css/bootstrap-markdown.min.css" />
+
+<!-- <script src="../static/jquery/jquery.min.js"></script> -->
+<script src="../static/markdown/js/jquery.min.js"></script>
+<script src="../static/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/markdown/js/bootstrap-markdown.js"></script>
+<script src="http://www.codingdrama.com/bootstrap-markdown/js/markdown.js"></script>
+<script src="http://www.codingdrama.com/bootstrap-markdown/js/to-markdown.js"></script>
+
+<title>Insert title here</title>
+</head>
+<body>
+<form>
+    <input name="title" type="text" placeholder="Title?" />
+    <textarea name="content" data-provide="markdown" id="markdown-editor" rows="10"></textarea>
+    <label class="checkbox">
+      <input name="publish" type="checkbox"> Publish
+    </label>
+    <hr/>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+  <script>
+  $('#markdown-editor').markdown();
+  </script>
+</body>
+</html>
