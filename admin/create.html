@@ -51,7 +51,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-					<button type="button" class="btn btn-success" id="submit">提交</button>
+					<button type="button" class="btn btn-success" id="submit">发表</button>
 					</div>			
 				</form>		
 			</div>
@@ -63,14 +63,38 @@
 </body>
 <script>
 	$('#submit').click(function(){
-		$('#title').val();
-		$('#content').val();
-		$('#source').val;
-		$("input[name='isMine']:checked").val();
-		$("input[name='tag[]']:checkbox:checked").each(function(){
-			$(this).val(); 
-		})
+		title=$('#title').val();
+	//	content=$('#markdown-editor').val();
+	//把Markdown语言转换成html语言传给后台
+		content = markdown.toHTML($('#markdown-editor').val());
+		source=$('#source').val;
+		isMine=$("input[name='isMine']:checked").val();
+		var tag_array=new Array();
+		$('input[name="tag[]"]:checked').each(function(){
+			tag_array.push($(this).val());//向数组中添加元素
+		});
+		var tagstr=tag_array.join(',');//将数组元素连接起来以构建一个字符串
+
+		$.ajax({
+			type:'post',
+			url:'create.php',
+			data:{
+				title:title,
+				content:content,
+				source:source,
+				isMine:isMine,
+				tag:tagstr
+			},
+			dataType:'html',
+			success:function(res){
+				alert(res);
+			},
+			error:function(){
+				alert('请求失败');
+			}
+		});
 	})
+	
 </script>
 
 
