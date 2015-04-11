@@ -4,7 +4,6 @@
     session_start();
     //判断是否登陆
     if(!isset($_SESSION["username"])){
-        echo "aaa";      
         exit();
     }
     

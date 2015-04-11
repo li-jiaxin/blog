@@ -24,13 +24,13 @@
            <div>
                 <ul class="list-inline">
                    <li class="navigation__item">
-                      <a class="blog-button" title="访问博客" href="/#blog">博客</a>
+                      <a class="blog-button" title="访问博客" href="">博客</a>
                    </li>
                    <li class="navigation__item">
-                      <a class="blog-button" href="/projects">项目作品</a>
+                      <a class="blog-button" href="">项目作品</a>
                    </li>
                    <li class="navigation__item">
-                      <a class="blog-button" href="/aboutme">关于我</a>
+                      <a class="blog-button" href="">关于我</a>
                    </li>
                  </ul>
            </div>

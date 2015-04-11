@@ -139,6 +139,18 @@ font-family: Lato, "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", 
 	color:#fff;
 	opacity:1;
 }
-
-
-
+.post{
+	margin:0 auto;
+	width:50%;
+}
+.list-unstyled li{
+	border-bottom:1px dashed #d1d1d1;
+	line-height:5em;
+}
+.list-unstyled a,span{
+	font-size:20px;
+	color:#000;
+}
+.list-unstyled a:hover{
+	color:#B0B0B0;
+}
